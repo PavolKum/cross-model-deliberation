@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+# per-run secrets and raw lane output: never commit from a live run folder
+**/run.json
+**/prompts/
+**/logs/
+.agent-sync/

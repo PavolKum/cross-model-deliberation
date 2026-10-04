@@ -1,0 +1,72 @@
+{
+ "oc-gpt-astra": {
+  "task_id": 233,
+  "model": "openai/gpt-6-astra",
+  "family": "gpt",
+  "delivered": true,
+  "bytes": 2882,
+  "votes": {
+   "LAYOUT": "separate-repo",
+   "NAME": "agent-usage-ledger",
+   "RENAME": "no",
+   "changed": "no: Fleet is a literal and defensible frame, but domain/function clarity and avoiding migration still outweigh its branding benefit; peer counts did not move my votes.",
+   "confidence": "M"
+  }
+ },
+ "oc-gpt-sol": {
+  "task_id": 234,
+  "model": "openai/gpt-6.1-sol",
+  "family": "gpt",
+  "delivered": true,
+  "bytes": 2982,
+  "votes": {
+   "LAYOUT": "separate-repo",
+   "NAME": "agent-usage-ledger",
+   "RENAME": "no",
+   "changed": "no: Cross-machine pooling strengthens the fleet framing, but not enough to outweigh functional clarity; no vote changed because of the tally.",
+   "confidence": "M"
+  }
+ },
+ "cc-claude-fable": {
+  "task_id": 235,
+  "model": "fable",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 3647,
+  "votes": {
+   "LAYOUT": "separate-repo",
+   "NAME": "agent-usage-ledger",
+   "RENAME": "no",
+   "changed": "yes: NAME moved fleet-ledger -> agent-usage-ledger because RENAME=no (5-0) means the sibling never carries \"fleet\", so the family-token half of my case was void by my own C vote; the other half (lengt",
+   "confidence": "M"
+  }
+ },
+ "cc-claude-opus": {
+  "task_id": 236,
+  "model": "opus",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 6371,
+  "votes": {
+   "LAYOUT": "separate-repo",
+   "NAME": "agent-usage-ledger",
+   "RENAME": "no",
+   "changed": "no: no vote moved; three sub-arguments did - I conceded the probe clock, withdrew my own PyPI-rename point, and demoted the blast-radius argument I had just accepted.",
+   "confidence": "M"
+  }
+ },
+ "cc-claude-sonnet": {
+  "task_id": 237,
+  "model": "sonnet",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 2040,
+  "votes": {
+   "LAYOUT": "separate-repo",
+   "NAME": "agent-usage-ledger",
+   "RENAME": "no",
+   "changed": "yes: switched NAME from fleet-ledger (my round-1 vote) to agent-usage-ledger.",
+   "confidence": "M"
+  }
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "_comment": "Subscription-backed lanes only. GPT lanes run through OpenCode on the OpenAI endpoint; Claude lanes run as Claude Code subagents on a Claude subscription. No prepaid-credit lanes (OpenRouter, Gemini, Grok): on the first hand-driven run a prepaid balance ran out mid-round and took three lanes down at once. Variants: xhigh works on the OpenAI endpoint; do not pass --variant to OpenRouter-hosted Anthropic models, they exit without joining.",
+  "lanes": [
+    {"agent": "oc-gpt-astra", "runner": "opencode", "model": "openai/gpt-6-astra", "variant": "xhigh", "family": "gpt"},
+    {"agent": "oc-gpt-sol", "runner": "opencode", "model": "openai/gpt-6.1-sol", "variant": "xhigh", "family": "gpt"},
+    {"agent": "cc-claude-fable", "runner": "subagent", "model": "fable", "family": "claude"},
+    {"agent": "cc-claude-opus", "runner": "subagent", "model": "opus", "family": "claude"},
+    {"agent": "cc-claude-sonnet", "runner": "subagent", "model": "sonnet", "family": "claude"}
+  ]
+}

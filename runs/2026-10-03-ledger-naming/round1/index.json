@@ -1,0 +1,37 @@
+{
+ "oc-gpt-astra": {
+  "task_id": 202,
+  "model": "openai/gpt-6-astra",
+  "family": "gpt",
+  "delivered": true,
+  "bytes": 10469
+ },
+ "oc-gpt-sol": {
+  "task_id": 203,
+  "model": "openai/gpt-6.1-sol",
+  "family": "gpt",
+  "delivered": true,
+  "bytes": 7900
+ },
+ "cc-claude-fable": {
+  "task_id": 204,
+  "model": "fable",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 9895
+ },
+ "cc-claude-opus": {
+  "task_id": 205,
+  "model": "opus",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 13435
+ },
+ "cc-claude-sonnet": {
+  "task_id": 206,
+  "model": "sonnet",
+  "family": "claude",
+  "delivered": true,
+  "bytes": 7130
+ }
+}

@@ -1,0 +1,19 @@
+# Round 2 answer: cc-claude-fable (fable, subagent), task 235
+
+VOTE LAYOUT=separate-repo
+VOTE NAME=agent-usage-ledger
+VOTE RENAME=no
+CHANGED=yes: NAME moved fleet-ledger -> agent-usage-ledger because RENAME=no (5-0) means the sibling never carries "fleet", so the family-token half of my case was void by my own C vote; the other half (length) dissolves with a matching short entry point.
+CONFIDENCE=M
+
+LAYOUT and RENAME: unchanged, 5-0 in round 1, nothing in round 2 disturbed them. One refinement from oc-gpt-sol and oc-gpt-astra I accept: cc-claude-opus's "a PyPI name cannot be renamed in place" is future lock-in, not a present cost, because the quota tool's PyPI publication is still pending. RENAME=no rests on present costs: the public GitHub identity and v0.2.0 tag, three console scripts, the CLAUDE_QUOTA_* env family, the snapshot path, the README honesty line, and the pending-publisher coordinates.
+NAME, re-derived rather than borrowed:
+(a) With claude-quota-mcp fixed, a pair named claude-quota-mcp + fleet-ledger shares no token; "fleet" in the ledger name bought zero family coherence. cc-claude-sonnet's C reasoning ("family branding belongs at the thesis level") cuts the same way on B, and sonnet now agrees.
+(b) "usage" is the author's token at three independent naming moments (usage_* tools, server registered as `usage`, the `agent-usage` lineage); "fleet" exists only in the report's framing, not in the code surface. opus's namespace-hop argument is grounded in the shipped artefact, which is the only evidence-shaped argument on either side of the name split.
+(c) Length: ship both `agent-usage-ledger` and `usage-ledger` console scripts; astra is right that uvx resolves by package name, and a matching script keeps `uvx agent-usage-ledger` working without --from. The import name is rarely typed by a CLI/MCP user.
+(d) JetBrains Fleet is a closer collision in a dev-tool registry than the vehicle and k8s fleets I flagged in round 1; I underweighted it.
+(e) "A name without fleet does not test the frame": I now agree with sonnet and astra that the 30-day probe measures installs and first calls, not brand resonance. The frame lives in the summary line, README, GitHub topic and umbrella, which all five lanes agreed to preserve.
+Residual I still hold against the majority: agent-usage-ledger is descriptive and forgettable, and the reputation lens wants the thesis token on the artefact people actually install, not on an umbrella nobody installs. I vote against it because a first-install probe is lost at the misread in the registry, not at the forgotten second visit. If the goal later shifts to reputation, the runner-up is agent-fleet-ledger, not fleet-ledger: "agent-fleet" at least disambiguates, though it implies an orchestrated fleet a solo installer does not have.
+Clock (not a vote key, but the plan text needs one rule): sol is right that next-steps.md names neither GitHub nor PyPI as "publish". I accept astra's reconciliation: per-tool windows starting at PyPI release, with earlier git+https installs recorded as early evidence rather than as the window. That resolves the fable/sonnet vs opus split the matrix flagged.
+Cascade check: round 1 was independent and the 3-2 was cross-family. I wrote my position note (event 252) before draining peers' notes, and the reasons above are re-derived from the inputs. The tally did not move me; (a) and (b) did. No direct challenge arrived in the wait, so no tell was sent.
+Confidence M: NAME remains a semantic judgment with no measured discovery evidence (sol, astra). H on LAYOUT and RENAME. Reported at the weakest sub-answer this round, matching opus's aggregation rule, so the headline is comparable across lanes.
