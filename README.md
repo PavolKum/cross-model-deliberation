@@ -1,8 +1,8 @@
-# Two-round cross-model review
+# Two-round cross-model deliberation
 
 **An observational technical report on vote movement, delivery failures and human intervention in multi-agent deliberation.**
 
-Two runs on 3 October 2026 requested independent first answers, then used an agreement matrix, peer critique and revised votes, followed by a human-directed decision. This repository publishes the findings, available evidence and supporting harness. The repository slug remains `agent-swarm`.
+Two runs on 3 October 2026 requested independent first answers, then used an agreement matrix, peer critique and revised votes, followed by a human-directed decision. This repository publishes the findings, available evidence and supporting harness.
 
 **[Read the technical report](REPORT.md)**
 
@@ -17,7 +17,7 @@ Two runs on 3 October 2026 requested independent first answers, then used an agr
 | Naming-run elapsed time and relaunches | 12 minutes; 0 relaunches | Operator-reported; execution receipts are not published |
 | Earlier eight-lane run | 5/8 first-launch deliveries; 7/8 original lane slots delivered in round two after recovery and one exclusion | Operator-reported mechanics account |
 
-**These observations establish vote convergence and document operational problems. They do not establish better decisions, a speedup, lower cost or freedom from conformity.** There is no matched single-model baseline or independent answer key. The two tasks and execution configurations differ.
+**These runs document vote movement and failures, not decision quality.** See the report for the evaluation limits.
 
 ## Inspect and reproduce
 

@@ -1,10 +1,10 @@
-# Two-round cross-model review: two operational case studies
+# Two-round cross-model deliberation: two operational case studies
 
 **Run date:** 3 October 2026. **Report revision:** 4 October 2026.
 
 ## Abstract
 
-This report examines two uses of a human-facilitated, two-round multi-agent review process. Lanes were asked to answer independently, then inspect peer answers and a synthesized disagreement matrix before revising their votes. The later five-lane naming run has published final-answer artifacts: two lanes changed their naming preference, moving a 3–2 split to 5–0. The other two vote keys were unanimous before discussion. Its operator recorded 12 minutes from initialization to the final tally and zero relaunches. An earlier eight-lane run documents launch failures, a shared prepaid-balance failure, recovery and one dropped lane. These are operational observations, not a controlled evaluation of decision quality or efficiency.
+The process is designed to surface disagreement and challenge an initial recommendation before a human decides. This report examines two uses of human-facilitated, two-round cross-model deliberation. Lanes were asked to answer independently, then inspect peer answers and a synthesized disagreement matrix before revising their votes. The later five-lane naming run has published final-answer artifacts: two lanes changed their naming preference, moving a 3–2 split to 5–0. The other two vote keys were unanimous before discussion. Its operator recorded 12 minutes from initialization to the final tally and zero relaunches. An earlier eight-lane run documents launch failures, a shared prepaid-balance failure, recovery and one dropped lane. These are operational observations, not a controlled evaluation of decision quality or efficiency.
 
 ## 1. Questions and evidence standard
 
@@ -73,7 +73,7 @@ The [decision record](runs/2026-10-03-ledger-naming/decision.md) gives initializ
 
 ### Convergence is not a correctness result
 
-The historical decision record says there was no cascade signature. The available evidence supports a narrower statement: the switching answers contain substantive reasons and self-reports about their influences. The claimed ordering of intermediate messages cannot be checked here, and would not exclude all influence paths even if verified. Round-one independence does not establish round-two independence. No naming-discovery experiment or downstream adoption outcome validates the final preference.
+The switching answers document substantive reasons and self-reported influences. The limits of interpreting convergence, including the historical record's stronger cascade claim, are discussed in section 5.
 
 ## 4. Earlier eight-lane run: reported operational outcomes
 
@@ -83,6 +83,7 @@ All results in this section come from the [operator's mechanics account](reports
 |---|---|---|
 | Round-one first launch | 5/8 delivered | Three original lanes needed relaunch/recovery |
 | Round-one eventual answers | 8/8 delivered | After operator intervention |
+| Facilitator preference | Opposed by 6–7 of 8 lanes on the two main keys in round one; later withdrawn in writing | Operator-reported; facilitator was a separate, uncounted position |
 | Shared balance failure in round two | Three lanes affected | One prepaid account was a shared dependency |
 | Round-two final answers | 7/7 retained lanes | 7/8 original lane slots; one dropped, two rerouted and rerun |
 | Vote movement | 5/7 changed at least one vote | Retained lanes only; dropped lane's second-round preference is unknown |
@@ -102,9 +103,22 @@ The operator also launched an extra GPT Sol lane through a supervised read-only 
 
 This illustrates an operational distinction: **producing an answer, exiting successfully and having a result accepted are separate outcomes.** Without the receipts, hashes and logs, this release cannot independently verify the policy enforcement or attribution of those mutations. The case motivates evaluating isolated or narrowly attested inputs; it does not establish the supervisor's general reliability.
 
+### Operational lessons (operator-reported)
+
+The mechanics account motivated the following design responses. Their status distinguishes changes reported as implemented from proposals; none is a measured performance gain.
+
+| Observation | Design response | Status |
+|---|---|---|
+| Concurrent facilitator writes caused workspace attestation to fail | Give each supervised lane isolated frozen inputs or a narrowly defined attestation scope | Proposed; per-lane worktrees remain future work |
+| A lane answered an older task | Repeat the assigned task identity in every prompt | Reported as incorporated into the harness |
+| Detached-child stdout was lost | Run foreground children with output captured to a log | Reported as incorporated into the harness |
+| A model exited successfully but its result failed attestation | Keep answer production, exit status and result acceptance as separate checks | Reported behavior of the supervised launcher; that launcher is not included here |
+| One depleted prepaid balance affected three lanes | Treat shared accounts as common failure dependencies; the operator changed the default roster | Subscription-backed default roster included; no general reliability claim |
+| The first supervised attempt failed on the Windows `.cmd` launch path | Use the native executable for that launch path | Reported correction for the second attempt; root cause was not independently verified |
+
 ## 5. What these runs do and do not support
 
-The naming run demonstrates an inspectable record of disagreement and revision. The mechanics account identifies concrete recovery work and a shared account dependency. Together they suggest useful design questions about input isolation, explicit task identity, output capture and acceptance checks.
+The naming run demonstrates an inspectable record of disagreement and revision. The mechanics account records a challenge to the facilitator's initial preference, concrete recovery work and a shared account dependency. Together they motivate the operational responses above.
 
 They do **not** establish:
 
@@ -115,7 +129,7 @@ They do **not** establish:
 - That open discussion necessarily causes conformity, or that requested blind first answers prevent it.
 - That five lanes or two rounds are optimal. No alternative-size or alternative-protocol evaluation was conducted.
 
-The historical records retain stronger language in places. This report qualifies those interpretations rather than treating them as measured results.
+The historical naming decision record says there was no cascade signature. The switching answers provide substantive reasons, but their claimed intermediate-message ordering cannot be checked here and would not exclude all influence paths even if verified. Requested independence in round one does not establish independence in round two. No naming-discovery experiment or downstream adoption outcome validates the final preference. These limits qualify the historical interpretation while preserving the original record.
 
 ## 6. Reproduction and provenance limits
 
