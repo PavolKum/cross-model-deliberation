@@ -1,10 +1,10 @@
 ---
-name: agent-swarm
-description: Run a multi-model adjudication in two rounds (independent answers, then debate and vote) with GPT lanes via OpenCode and Claude lanes as Claude Code subagents; collect, build an agreement matrix, tally votes, decide. Use for "swarm", "council", "adjudicate", "get several models to vote", "cross-family review of a decision", or any time one strong model's answer should be checked by independent lanes before the operator acts on it. Subscription-backed lanes only.
+name: cross-model-deliberation
+description: Run a multi-model adjudication in two rounds (independent answers, then debate and vote) with GPT lanes via OpenCode and Claude lanes as Claude Code subagents; collect, build an agreement matrix, tally votes, decide. Use for "deliberation", "swarm", "council", "adjudicate", "get several models to vote", "cross-family review of a decision", or any time one strong model's answer should be checked by independent lanes before the operator acts on it. Subscription-backed lanes only.
 allowed-tools: Read Bash PowerShell Glob Grep Write Edit Agent
 ---
 
-# Agent swarm: independent answers, then debate and vote
+# Cross-model deliberation: independent answers, then debate and vote
 
 Built 2026-10-03 from a hand-driven eight-lane adjudication (four model families, two rounds, the swarm reversing the facilitator's own pick). The mechanics of that run are in `reports/2026-10-03-routing-adjudication-mechanics.md`. This skill is the harness that run was hand-driven through, with the failure modes fixed. The first harnessed run is in `runs/2026-10-03-ledger-naming/`.
 
