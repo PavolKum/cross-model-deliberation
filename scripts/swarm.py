@@ -324,8 +324,16 @@ def cmd_round2(args):
     values = {"workspace": fs(run["workspace"]), "run_dir": fs(args.run), "round1_dir": fs(r1),
               "matrix_path": fs(matrix), "vote_keys": ", ".join(run["vote_keys"]), "lead_agent": run["lead_agent"]}
 
+    custom = None
+    if getattr(args, "task", None):
+        with open(args.task, encoding="utf-8") as f:  # run-specific round-2 body; same {{tokens}} as the template
+            custom = f.read()
+
     def body_for(lane):
-        return render("task-r2.md", dict(values, task_id_r1=lane[task_key(1)], agent=lane["agent"]))
+        vals = dict(values, task_id_r1=lane[task_key(1)], agent=lane["agent"])
+        if custom is not None:
+            return re.sub(r"\{\{(\w+)\}\}", lambda m: str(vals.get(m.group(1), m.group(0))), custom)
+        return render("task-r2.md", vals)
 
     procs = _post_round(run, args.run, 2, body_for, launch=not args.no_launch)
     log("round 2 posted. Launch the subagent lanes now with the Agent tool (prompts under prompts/).")
@@ -433,6 +441,8 @@ def main():
         p.add_argument("--run", required=True)
         p.add_argument("--no-launch", action="store_true", help="post tasks and write prompts only")
         p.add_argument("--timeout", type=int, default=900)
+        if name == "round2":
+            p.add_argument("--task", default=None, help="custom round-2 task body (markdown with the template's {{tokens}})")
         p.set_defaults(func=func)
 
     for name, func in (("status", cmd_status), ("collect", cmd_collect)):
